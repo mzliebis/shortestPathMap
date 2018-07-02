@@ -1,0 +1,88 @@
+<html>
+   <head>
+      <title>Rubberbands with layered elements</title>
+
+      <style> 
+         body {
+             background: rgba(100, 145, 250, 0.3);
+         }
+
+         #canvas {
+            margin-left:0px;
+            margin-right: 20px;
+            margin-bottom: 0px;
+            border: thin solid #aaaaaa;
+            cursor: crosshair;
+            padding: 0;
+            //background-image: url('map.jpg');
+            
+         }
+     
+
+         #controls {
+            margin: 20px 0px 20px 20px;
+         }
+
+         #rubberbandDiv {
+            position: absolute;
+            border: 3px solid yellow;
+            cursor: crosshair;
+            display: none;
+         }
+
+
+      </style>
+      <meta name=”viewport” content=”width=device-width, initial-scale=1″ />
+   </head>
+
+  <body>
+      <div id='controls'>
+         <select id = "startPt" onchange="calcStartPt()">
+         <option value="29">Choose</option>
+         <option value="19">Lecture Hall</option>
+  		<option value="20">Admin Building</option>
+  		<option value="21">Teaching Building A</option>
+        <option value="38">Teaching Building B</option>
+        <option value="39">Teaching Building C</option>
+        <option value="40">Teaching Building D</option>
+        <option value="41">Dining Hall/Indoor Gym</option>
+        <option value="42">Students' Dormitory</option>
+        <option value="43">Track</option>
+        <option value="45">Playground</option>
+  				</select>
+
+        <select id = "endPt" onchange="calcEndPt()">
+            <option value="30">Choose</option>
+            <option value="19">Lecture Hall</option>
+            <option value="20">Admin Building</option>
+            <option value="21">Teaching Building A</option>
+            <option value="38">Teaching Building B</option>
+            <option value="39">Teaching Building C</option>
+            <option value="40">Teaching Building D</option>
+            <option value="41">Dining Hall/Indoor Gym</option>
+            <option value="42">Students' Dormitory</option>
+            <option value="43">Track</option>
+            <option value="45">Playground</option>
+		</select>
+		
+		<input id="route" type="button" value="route" onclick="calcPath();" />
+      </div>
+            <p>Please</p>
+          
+
+      <div id='rubberbandDiv'></div>
+               <div style="position:absolute;z-index:-1;width:100%;height:100%;">
+          <img src="file:///Users/miki/Desktop/dijkstra_algorithm/map.jpg" width="90%" height="200%" />
+          </div>
+               
+
+               <canvas id='canvas' width='1200' height='1280'>
+         Canvas not supported
+         
+              </canvas>
+      
+        
+     <script src='a.js'></script>
+  </body>
+</html>
+
